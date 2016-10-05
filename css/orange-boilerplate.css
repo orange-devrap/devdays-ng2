@@ -1,0 +1,300 @@
+
+/**************
+ *
+**************/
+.reveal section {
+  /*margin-top: 30px;*/
+}
+
+.slides .footer {
+    position: absolute;
+    bottom: 10.5vh;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/*********
+ * cover
+ *********/
+section.cover {
+  text-align: center;
+}
+
+section.cover .title {
+    padding-top:100px
+}
+
+section.cover .author {
+  padding-top:60px;
+  margin-top: 10px;
+}
+
+
+
+/*********
+ * plan
+ *********/
+ section.plan {
+  text-align: center;
+}
+
+section.plan ol {
+  padding-left: 80px;
+}
+
+section.plan li {
+  padding-bottom: 30px;
+  font-size: 1.3em;
+}
+
+section.plan h2, section.plan h3 {
+  padding-bottom: 0px;
+}
+
+
+/******************
+ * section chapter
+ ******************/
+section.chapter {
+  color:#fff;
+}
+
+.chapter .title {
+    padding-top: 200px
+}
+
+.chapter .subtitle {
+    color:#f6f6f6;
+}
+
+
+
+/****************
+ * section slide
+ ****************/
+ .header {
+    margin-bottom: 35px!important;
+ }
+.header .title {
+  padding-left: 120px;
+  /*border-bottom:  3px #ccc solid;*/
+}
+.header h3 {
+  padding-bottom: 10px;
+  padding-top: 15px;  
+}
+
+
+
+
+
+/**************
+ * images
+ **************/
+img.noborder {
+  border:0 none!important;
+  box-shadow:none!important;
+  background:none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+  margin:0!important;
+}
+
+.header .logo-container {
+  width: 85px;
+  height: 85px;
+}
+
+.logo-orange {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/orange.gif);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.logo-api {
+  position: absolute;
+  width: 100px;
+  height: 88px;
+  background-image: url(../images/api.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+
+/**************
+ * list
+ **************/
+ol li {
+    list-style-type: none;
+    counter-increment: list;
+    position: relative;
+}
+
+ol li:after {
+    content: counter(list) ".";
+    position: absolute;
+    left: -2.5em;
+    width: 2em;
+    text-align: right;
+    color: #ff6600;
+}
+
+
+.checklist {
+  margin-left: 50px!important;
+}
+
+.checklist i {
+  margin-right: 20px;
+}
+
+.checked {
+  text-decoration:line-through;
+}
+
+
+.list {
+  margin-left: 50px!important;
+}
+
+.list.child li p:first-child {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.list.child li p:nth-child(2),
+.list.child li p:nth-child(3) {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+} 
+.list > p {
+  padding-bottom: 15px;
+}
+
+.list ul li {
+  color:#ff6600;
+  padding-bottom: 15px;
+}
+
+.list.condensed ul li {
+  padding-bottom: 0px;
+}
+
+.list.lg ul li {
+  padding-top: 15px;
+  font-size: 1.1em;
+}
+
+.list ul li p, .list ul li span {
+  color: #333;
+}
+
+.list ul li span {
+  font-size: 0.8em;
+}
+
+
+
+/**************
+ * font colors
+ **************/
+.success {
+  color:#50be87!important;
+}
+
+.info {
+  color: #4bb4e6!important;
+}
+
+.warn {
+  color: #ffdc00!important;
+}
+
+.orange {
+  color: #ff6600!important;
+}
+
+.purple {
+  color: #9164cd!important;
+}
+
+.pink {
+  color: #ffb4e6!important;
+}
+
+.default-color {
+    color:#444!important;
+}
+
+.border-success {
+  border-color:#50be87!important;
+}
+
+.border-info {
+  border-color: #4bb4e6!important;
+}
+
+.border-warn {
+  border-color: #ff5500!important;
+}
+
+.border-orange {
+  border-color: #ff6600!important;
+}
+
+.border-default {
+    border-color:#444!important;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+.fts-xs {
+  font-size: 0.3em!important;
+}
+.fts-sm {
+  font-size: 0.5em!important;
+}
+.fts-md {
+  font-size: 0.7em!important;
+}
+.fts-lg {
+  font-size: 1.3em!important;
+}
+.fts-xlg {
+  font-size: 2em!important;
+}
+
+/**************
+ * separator
+ **************/
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dfdfdf -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 3px 0 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+

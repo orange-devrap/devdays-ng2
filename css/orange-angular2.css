@@ -1,0 +1,123 @@
+.background-sky {
+    /*background:rgba(0, 0, 0, 0) linear-gradient(#0143a3, #0273d4) repeat scroll 0 0;*/
+    color: #fff!important;
+    /*margin:25px!important;*/
+}
+
+.hero.is-large {
+    height: 338px; /* 478 */
+    padding-top: 16px;
+    text-align: center;
+}
+.hero {
+    height: 192px;
+    padding: 80px 48px 40px;
+    position: relative;
+}
+.background-superhero-paper {
+    background: rgba(0, 0, 0, 0) url("../images/superhero-paper.png") no-repeat scroll center bottom / 100% auto;
+}
+
+
+.hero .hero-logo::after {
+    background: rgba(0, 0, 0, 0) url("../images/shield-2.png") no-repeat scroll center top / contain;
+    content: "";
+    height: 290px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.hero .hero-logo {
+    font-weight: 400;
+    margin: -25px auto 40px;
+    opacity: 1;
+    padding-top: 224px;
+    position: relative;
+    width: 560px;
+}
+.text-headline, .docs-content h3 {
+    font-size: 24px!important;
+    line-height: 32px!important;
+    margin: 0 0 16px;
+    opacity: 0.87!important;
+    color:#fff!important;
+}            
+
+.logo-ng2 {
+    background-image: url("../images/shield-ng2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100px;
+    position: absolute;
+    top: 17px;
+    width: 110px;
+}
+
+.logo-ng {
+    background-image: url("../images/AngularJS-Shield-large.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    width: 100px;
+}
+
+.header .title {
+    padding-left: 130px;
+}
+
+.cover .author h4,
+.cover .author h4 small {
+    color:#fff;
+}
+
+.cards .row  {
+    margin-bottom: 15px;
+}
+
+.cards .row > div {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.cards .row .card  {
+    height: 95px;
+    padding: 30px 10px 10px 10px;
+    font-size: 0.8em;
+    text-align: center;
+    color: #222;
+}
+.cards .row .card div.subtitle {
+    position: relative;
+    top:0px;
+    font-size: 0.6em;
+}
+.cards .row .card.green {
+    background-color: #50be87!important;
+    color: white!important;
+}
+.cards .row .card.blue {
+    background-color: #24a6e4!important;
+    color: white!important;
+}
+.cards .row .card.bluelight {
+    background-color: #7dc3e4!important;
+    color: white!important;
+}
+.cards .row .card.yellow {
+    background-color: #ffdc00!important;
+    color: white!important;
+}
+.cards .row .card.orange {
+    background-color: #ff6600!important;
+    color: white!important;
+}
+.cards .row .card.purple {
+    background-color: #9164cd!important;
+    color: white!important;
+}
+.cards .row .card.pink {
+    background-color: #ffb4e6!important;
+    color: white!important;
+}
