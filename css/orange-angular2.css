@@ -64,6 +64,32 @@
     width: 100px;
 }
 
+section.slide h2 {
+    padding-left: 130px;
+    margin-bottom: 50px;
+}
+
+section.slide h2 > logo {
+    background-image: url("../images/shield-ng2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100px;
+    position: absolute;
+    top: 17px;
+    left:0;
+    width: 110px;
+}
+section.slide h2 > logo-ng {
+    background-image: url("../images/AngularJS-Shield-large.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100px;
+    position: absolute;
+    top: 17px;
+    left:0;
+    width: 100px;
+}
+
 .header .title {
     padding-left: 130px;
 }
