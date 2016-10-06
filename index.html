@@ -553,7 +553,7 @@ export class MessagesComponent implements OnInit {
                                 <!--<img src="./images/archi_04_template.png" height="200" class="noborder">-->
                                 <img src="./images/archi_04_tree_components.png" height="400" class="noborder">
                             </div>
-                            <div class="col-sm-6 fts-md">
+                            <div class="col-sm-6 " style="font-size:0.9em;">
                                 <div class="list ">
                                     <ul>
                                         <li><p>HTML+ pour rendre le composant</p></li>
@@ -581,15 +581,16 @@ export class MessagesComponent implements OnInit {
 
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-4 text-center">
+                            <div class="col-sm-3 text-right">
                                 <img src="./images/archi_05_template-metadata-component.png" width="172" class="noborder">
                             </div>
-                            <div class="col-sm-8">
-                                <div class="list condensed">
+                            <div class="col-sm-9">
+                                <div class="list condensed " style="font-size:0.9em;">
                                     <ul>
-                                        <li><p>template</p></li>
-                                        <li><p>metadata</p></li>
-                                        <li><p>component</p></li>
+                                        <li><p>decorator (@annotation)</p></li>
+                                        <li><p>décrit <strong>comment</strong> traiter la classe</p></li>
+                                        <li><p>template + metadata + component <i class="fa fa-long-arrow-right" aria-hidden="true"></i> view</p></li>
+                                        <li><p><code>@Injectable</code>, <code>@Input</code>, <code>@Output</code>, ...</p></li>
                                     </ul>
                                 </div>
                             </div>
@@ -597,8 +598,20 @@ export class MessagesComponent implements OnInit {
                     </div>
                     
                     <pre><code class="hljs" data-trim>
-                     export class ClassName {
-                     }
+@Component({
+  moduleId: module.id,
+  selector: 'ddo-message-form',
+  templateUrl: 'message-form.component.html',
+  styleUrls: ['message-form.component.css']
+})
+export class MessageFormComponent implements OnInit {
+
+  @Input() roomId: string;
+
+  @Output() selectMsg: EventEmitter;
+
+  /* . . . */
+}
                     </code></pre>
 
                 </section>
@@ -607,9 +620,33 @@ export class MessagesComponent implements OnInit {
 
                     <h2><logo></logo>data binding</h2>
 
-                    <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6 text-center">
+                                <div class="row">
+                                    <img src="./images/archi_06_binding.png" height="280" class="noborder">
+                                </div>
+                                <div class="row">
+                                    <div class="list condensed " style="font-size:0.8em;">
+                                        <ul>
+                                            <li><p>interpolation <code>{{ message.body }}</code></p></li>
+                                            <li><p>property binding <code>[message]</code></p></li>
+                                            <li><p>event binding <code>(click)</code></p></li>
+                                            <li><p>two-way data binding <code>[(ngModel)]</code></p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-center">
+                                <img src="./images/archi_06_binding_global.png" height="500" class="noborder">
+                            </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-sm-12 text-center">
+                            </div>
+                        </div>-->
                     </div>
+
                 </section>
 
                 <section class="slide">
