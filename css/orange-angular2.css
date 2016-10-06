@@ -121,3 +121,9 @@
     background-color: #ffb4e6!important;
     color: white!important;
 }
+
+.cards.medium .row .card  {
+    height: 70px;
+    padding: 23px 10px 10px 10px;
+    font-size: 0.55em;
+}
