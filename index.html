@@ -619,15 +619,19 @@ export class MessageFormComponent implements OnInit {
                 <section class="slide">
 
                     <h2><logo></logo>data binding</h2>
+                    <br>
 
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <div class="row">
-                                    <img src="./images/archi_06_binding.png" height="280" class="noborder">
+                            <div class="col-sm-4 text-center">
+                                    <img src="./images/archi_06_binding.png" height="350" class="noborder">
+                                <!--<div class="row">
                                 </div>
                                 <div class="row">
-                                    <div class="list condensed " style="font-size:0.8em;">
+                                </div>-->
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                    <div class="list " style="font-size:0.95em;">
                                         <ul>
                                             <li><p>interpolation <code>{{ message.body }}</code></p></li>
                                             <li><p>property binding <code>[message]</code></p></li>
@@ -635,27 +639,75 @@ export class MessageFormComponent implements OnInit {
                                             <li><p>two-way data binding <code>[(ngModel)]</code></p></li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <img src="./images/archi_06_binding_global.png" height="500" class="noborder">
                             </div>
                         </div>
                         <!--<div class="row">
                             <div class="col-sm-12 text-center">
+                                <img src="./images/archi_06_binding_global.png" height="500" class="noborder">
                             </div>
                         </div>-->
+                    </div>
+
+                </section>
+                <section class="slide">
+
+                    <h2 style="margin-bottom:0"><logo></logo>binding communication</h2>
+                    <p class="fts-md" style="font-style: italic">
+                        "Angular processes all data bindings once per JavaScript event cycle, from the root of the application component tree through all child components."
+                    </p>
+                    <div class="container-fluid" style="font-size:0.9em">
+                        <div class="row">
+                            <div class="col-sm-6 text-center">
+                                <div class="row">
+                                    <img src="./images/archi_06_binding_global.png" height="300" class="noborder">
+                                </div>
+                                <div class="row">
+                                    <img src="./images/archi_06_parent-child-binding.png" height="300" class="noborder">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row" style="height:350px;padding-top:50px">
+                                    <div class="list">
+                                        <ul>
+                                            <li><p>entre template et component</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="list">
+                                        <ul>
+                                            <li><p>entre parent et enfant</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </section>
 
                 <section class="slide">
 
-                    <h2><logo></logo>directive</h2>
+                    <h2 style="margin-bottom:0"><logo></logo>directive</h2>
 
                     <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                        <img src="./images/archi_07_directive.png" height="250" class="noborder">
                     </div>
+                    <div class="list condensed">
+                        <ul>
+                            <li><p><code>@Directive</code> : classe avec metadata</p></li>
+                            <li><p><code>@Component</code> : directive avec template</p></li>
+                            <li><p>structural : modification DOM (add/remove/replace)</p></li>
+                            <pre><code class="hljs" data-trim>
+<div *ngFor="let msg of messages | async">[...]</div>
+                            </code></pre>
+                            <li><p>attribute : modification element (apparence/comportement)</p></li>
+                            <pre><code class="hljs" data-trim>
+<input [ngClass]="setClasses()" [(ngModel)]="message.body" >
+                            </code></pre>
+                        </ul>
+                    </div>
+
                 </section>
 
                 <section class="slide">
@@ -663,8 +715,21 @@ export class MessageFormComponent implements OnInit {
                     <h2><logo></logo>service</h2>
 
                     <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                        <img src="./images/archi_08_service.png" height="200" class="noborder">
                     </div>
+                    <div class="list condensed">
+                        <ul>
+                            <li><p>class "simple" : aucune spécificitée liée à Angular</p></li>
+                            <li><p>logger, fetch data, message bus, calcul, ...</p></li>
+                            <li><p>component : consomment les services</p></li>
+                        </ul>
+                    </div>
+                    <pre><code class="hljs" data-trim>
+export class Logger {
+  log(msg: any)   { console.log(msg); }
+  error(msg: any) { console.error(msg); }
+  warn(msg: any)  { console.warn(msg); }
+}                    </code></pre>
                 </section>
             
                 <section class="slide">
