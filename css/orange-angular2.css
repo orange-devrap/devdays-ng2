@@ -69,6 +69,11 @@ section.slide h2 {
     margin-bottom: 50px;
 }
 
+section.slide h2.no-margin-bt {
+    padding-left: 130px;
+    margin-bottom: 0px;
+}
+
 section.slide h2 > logo {
     background-image: url("../images/shield-ng2.png");
     background-repeat: no-repeat;

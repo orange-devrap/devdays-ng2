@@ -53,7 +53,7 @@
 				<section class="cover" data-background="rgba(0, 0, 0, 0) linear-gradient(#0143a3, #0273d4) repeat scroll 0 0">
                         <div class="logo-orange"></div>
                         
-                        <div class="title">
+                        <div class="title" style="padding-top:200px">
                             <header class="background-sky">
                                 <div class="hero background-superhero-paper is-large">
                                     <h1 class="hero-logo"></h1>
@@ -94,7 +94,7 @@
                     <div class="text-center" style="padding-top:200px;">
                         <img class="noborder" height="250" alt="AngularJS" src="./images/AngularJS-huge-inverse.png">
                     </div>
-                    <h2 class="subtitle">rappels...</h2>
+                    <h2 class="title subtitle text-center">rappels...</h2>
 				</section>
 
 
@@ -217,7 +217,7 @@
                             </div>
                         </header>        
                     </div>
-                    <h2 class="subtitle">solutions...</h2>
+                    <h2 class="title subtitle text-center">solutions...</h2>
 				</section>
 
                 <section class="slide">
@@ -391,7 +391,7 @@
                             </div>
                         </header>        
                     </div>
-                    <h2 class="subtitle">architecture...</h2>
+                    <h2 class="title subtitle text-center">architecture...</h2>
 				</section>
 
                 
@@ -730,14 +730,14 @@ export class MessagesComponent implements OnInit {
                     </div>
                     <div class="list condensed">
                         <ul>
-                            <li><p><code>@Directive</code> : classe avec metadata</p></li>
-                            <li><p><code>@Component</code> : directive avec template</p></li>
-                            <li><p>structural : modification DOM (add/remove/replace)</p></li>
-                            <pre><code class="hljs" data-trim>
+                            <li><p><code class="fts-md">@Directive</code> : classe avec metadata</p></li>
+                            <li><p><code class="fts-md">@Component</code> : directive avec template</p></li>
+                            <li><p><strong>structural</strong>: DOM <i class="fa fa-long-arrow-right" aria-hidden="true"></i> add/remove/replace</p></li>
+                            <pre style="width:100%"><code class="hljs" data-trim>
 <div *ngFor="let msg of messages | async">[...]</div>
                             </code></pre>
-                            <li><p>attribute : modification element (apparence/comportement)</p></li>
-                            <pre><code class="hljs" data-trim>
+                            <li><p><strong>attribute</strong>: element <i class="fa fa-long-arrow-right" aria-hidden="true"></i> apparence/comportement</p></li>
+                            <pre style="width:100%"><code class="hljs" data-trim>
 <input [ngClass]="setClasses()" [(ngModel)]="message.body" >
                             </code></pre>
                         </ul>
@@ -747,7 +747,7 @@ export class MessagesComponent implements OnInit {
 
                 <section class="slide">
 
-                    <h2><logo></logo>service</h2>
+                    <h2 class="no-margin-bt"><logo></logo>service</h2>
 
                     <div class="text-center">
                         <img src="./images/archi_08_service.png" height="200" class="noborder">
@@ -755,16 +755,20 @@ export class MessagesComponent implements OnInit {
                     <div class="list condensed">
                         <ul>
                             <li><p>class "simple" : aucune spécificitée liée à Angular</p></li>
-                            <li><p>logger, fetch data, message bus, calcul, ...</p></li>
-                            <li><p>component <:></:> consomment les services</p></li>
+                            <li><p>composants consomment les services fournis via DI</p></li>
                         </ul>
                     </div>
                     <pre><code class="hljs" data-trim>
-export class Logger {
-  log(msg: any)   { console.log(msg); }
-  error(msg: any) { console.error(msg); }
-  warn(msg: any)  { console.warn(msg); }
-}                    </code></pre>
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ChatMessagesService {
+
+  constructor(private af: AngularFire) { }
+
+  getMessagesByRoomId(roomId: string): Observable&lt;ChatMessage[]> { /*..*/ }
+}
+                    </code></pre>
                 </section>
             
                 <section class="slide">
@@ -830,7 +834,7 @@ export class UpperCasePipe implements PipeTransform {
                 </section>
 
 
-
+<!--
                 <section class="slide">
 
                     <h2><logo></logo>HTTP</h2>
@@ -840,402 +844,110 @@ export class UpperCasePipe implements PipeTransform {
                     </div>
                 </section>
             
+-->
+
                 <section class="slide">
 
-                    <h2><logo></logo>router</h2>
+                    <h2 class="no-margin-bt"><logo></logo>router</h2>
 
                     <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                        <img class="noborder" style="height:280px" alt="router pattern" src="./images/router-pattern.png">
                     </div>
+
+                    <div class="list condensed fts-md">
+                        <ul>
+                            <li><p>chaque <strong>composant</strong> est routable</p></li>
+                            <li><p>les routes se font entre <strong>composants</strong></p></li>
+                            <li><p>chaque composant a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p></li>
+                        </ul>
+                    </div>
+                    <pre><code class="hljs" data-trim>
+// configuration routes                        
+const appRoutes: Routes = [
+{ path:'', component:LoginComponent },
+{ path:'rooms', component:RoomsComponent, canActivate:[AuthGuardService] },
+];
+// navigate from template
+<a routerLink="/rooms">rooms</a>
+// navigate from component
+this.router.navigate(['/rooms']);
+                    </code></pre>
                 </section>
             
-                <section class="slide">
+                <!--<section class="slide">
 
                     <h2><logo></logo>forms</h2>
 
                     <div class="text-center">
                         <img src="./images/archi_0.png" height="200" class="noborder">
                     </div>
-                </section>
+                </section>-->
             
             </section>
 
 
 
-
-
-
-
-
-<!-- ====================== -->
-<!-- Angular 2 OLD archi    -->
-<!-- ====================== -->
-
-            <section>
-
-				<section class="chapter" data-background="rgba(0, 0, 0, 0) linear-gradient(#0143a3, #0273d4) repeat scroll 0 0">
-                        <div class="logo-orange"></div>
-                        <div class="title">
-                            <header class="background-sky">
-                                <div class="hero background-superhero-paper is-large">
-                                    <h1 class="hero-logo"></h1>
-                                </div>
-                            </header>        
-                        </div>
-						<h2 class="subtitle">OLD architecture...</h2>
-				</section>
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">architecture</h2>
-                    </div>
-                    <div class="text-center">
-                        <img src="./images/angular2_archi.png" class="noborder">
-                    </div>
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">composants</h2>
-                    </div>
-                    <div class="list condensed">
-                        <ul>
-                            <li>
-                                <p class="default-color"><strong>tout est composant</strong></p>
-                            </li>
-                            <li>
-                                <p class="default-color"><strong>application : arbre de composant</strong></p>
-                            </li>
-                            <li>
-                                <p class="default-color"><strong>configuration via annotation (metadata)</strong></p>
-                            </li>
-                        </ul>
-                    </div>
-                    <pre><code data-trim class="javascript">// configuration component
-import {Component} from 'angular2/angular2';
-@Component({
-     selector: 'my-app',
-     template: '<main>
-                    <h1> This is my first Angular2 app</h1>
-               </main>'
-})
-class MyAppComponent {
-} 
-</code></pre>
-                    
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">binding</h2>
-                    </div>
-                    <div class="text-center">
-                        <img src="./images/binding-type.png" class="noborder" >
-                    </div>
-                </section>
-
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">binding exemple</h2>
-                    </div>
-                    <div class="text-center">
-                        <img src="./images/binding.png" class="noborder" >
-                    </div>
-                    
-                    <pre style="margin: 1px auto;font-size: 0.45em;"><code data-trim class="javascript">//< beerItem [beer]="'Maredsous'" (selectBeer)="sendToBeerTap(b)"/>
-@Component({
-     selector: 'beerItem',
-     inputs: ['beer'],
-     outputs: ['selectBeer'],
-     template: '<div>
-                   <h2>{{beer}}</h2>
-                   <button (click)="selectItem()">celle-ci !</button>
-                </div>'
-})
-class BeerItem {
-     beer: String;  selectBeer: EventEmitter;
-     selectItem() {
-          this.selectBeer.next(this.beer);
-     }
-}                     
-</code></pre>
-                    
-                </section>
-
-
-            </section>
-
-
-
-<!-- ==================== -->
-<!-- INJECTION DEPENDENCY -->
-<!-- ==================== -->
-            <section>
-
-                <section class="chapter"  data-background="./images/angular2.png" >
-                    <div class="logo-orange"></div>
-                    <h1 class="title">&nbsp;</h1>
-                    <h2 class="subtitle">Injection de Dépendances</h2>
-                </section>
-
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">DI principes</h2>
-                    </div>
-
-                    <div class="list">
-                        <ul>
-                            <li><p>1 Injecteur principal + 1 Injecteur par composant</p>
-                                <ul>
-                                    <li><span>Hérite de l'injecteur parent</span></li>
-                                    <li><span>Possibilité de redéfinir le Service à injecter</span></li>
-                                </ul>
-                            </li>
-                            <li><p>Utilisation d'annotations en ES6 et des types en TypeScript</p></li>
-                            <li><p>Services disponibles via le constructeur du composant</p></li>
-                        </ul>
-                    </div>
-
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">Injecteur principal</h2>
-                    </div>
-
-                    <p><strong class="info">Provider :</strong> useValue, useClass, useFactory <a target="blank" href="https://angular.io/docs/ts/latest/guide/dependency-injection.html"><small>(official guide)</small></a></p> 
-
-                    <pre><code style="max-height:none;" data-trim class="javascript">//  MyAppComponent
-@Component({
-    selector: 'my-app',
-    template: '<main>
-                 <h1> Welcome to our {{breweryName}}</h1>
-               </main>'
-})
-class MyAppComponent {
-    constructor(private breweryService:BreweryService) { 
-        this.breweryName = this.breweryService.getBreweryName();
-    }
-}
-
-// injector service to component
-bootstrap(MyAppComponent, [BreweryService]);
-
-// equivalent to
-bootstrap(MyAppComponent, [new Provider(HeroService, 
-                                       {useClass:HeroService})] );
-</code></pre>
-
-                   
-
-                </section>
-                
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">Injecteur par composant</h2>
-                    </div>
-                    <div class="list">
-                           <ul>
-                               <li><p>possibilité d'injecter un provider spécifique au composant</p></li>
-                           </ul>
-                    </div>
-                    
-                    <pre><code style="max-height:none;" data-trim class="javascript">//  Component injector                
-@Component({
-    selector: 'welcome-message',
-    template: '<h1>Welcome to our {{breweryName}}</h1>',
-    providers: [
-        [provide(String, {useValue: 'Awesome Zenika Brewery'})]
-    ]
-})
-
-class WelcomeMessage {
-    constructor(public breweryName:String){ ... }
-}     
-</code></pre>
-           
-                </section>
-
-            </section>
-
-
-
-<!-- ===== -->
-<!-- PIPES -->
-<!-- ===== -->
-
-            <section>
-
-                <section class="chapter"  data-background="./images/angular2.png" >
-                    <div class="logo-orange"></div>
-                    <h1 class="title">&nbsp;</h1>
-                    <h2 class="subtitle">Pipes</h2>
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">pipes (ex filter)</h2>
-                    </div>
-
-                    <div class="list condensed">
-                        <ul>
-                            <li><p>Identiques aux filtres d’AngularJS 1</p>
-                                <ul>
-                                    <li><span><code style="font-size:0.8em">{{ collectionOfBeers | orderBy:'note' | limitTo:5 }}</code></span></li>
-                                </ul>
-                            </li>
-                            <li><p>Permet de manipuler une donnée</p></li>
-                            <li><p>Pipes disponibles dans le framework :</p>
-                                <ul>
-                                   <img class="noborder" height="220" alt="api pipes" src="./images/api_pipes.png">
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">Custom pipe</h2>
-                    </div>
-                    
-                    <pre><code style="max-height:none;" >// custom pipe
-import {Pipe, PipeTransform} from 'angular2/core';
-/*
- * Raise the value exponentially
- * Takes an exponent argument that defaults to 1.
- * Usage:
- *   value | exponentialStrength:exponent
- * Example:
- *   {{ 2 |  exponentialStrength:10}}
- *   formats to: 1024
-*/
-@Pipe({name: 'exponentialStrength'})
-export class ExponentialStrengthPipe implements PipeTransform {
-  transform(value:number, args:string[]) : any {
-    return Math.pow(value, parseInt(args[0] || '1', 10));
-  }
-}
-</code></pre>                        
-
-                </section>
-
-
-            </section>
-
-<!-- ===== -->
-<!-- PIPES -->
-<!-- ===== -->
-
-            <section>
-
-                <section class="chapter"  data-background="./images/angular2.png" >
-                    <div class="logo-orange"></div>
-                    <h1 class="title">&nbsp;</h1>
-                    <h2 class="subtitle">Routing & Navigate</h2>
-                </section>
-                
-                <section>
-                    
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">general pattern</h2>
-                    </div>
-                    
-                    <div class="text-center">
-                        <img class="noborder" style="height:330px" alt="router pattern" src="./images/router-pattern.png">
-                    </div>
-
-                    <div class="list condensed">
-                        <ul style="font-size:0.8em">
-                            <li><p>chaque <strong>feature area</strong> a son propre module folder</p></li>
-                            <li><p>chaque feature area a son propre <strong>root component</strong></p></li>
-                            <li><p>chaque root component a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p></li>
-                        </ul>
-                    </div>
-
-                </section>
-                
-                <section>
-                    
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">sample</h2>
-                    </div>
-                    
-                    <div class="text-center">
-                        <img class="noborder" alt="exemple router config" src="./images/router_sample.png">
-                    </div>
-
-
-                </section>
-                
-
-            </section>
-
-<!-- ======= -->
-<!-- roadmap -->
-<!-- ======= -->
-            <section>
-
-                <section class="chapter"  data-background="./images/angular2.png" >
-                    <div class="logo-orange"></div>
-                    <h1 class="title">&nbsp;</h1>
-                    <h2 class="subtitle">Roadmap</h2>
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="logo-ng2"></div>
-                        <h2 class="title">roadmap</h2>
-                    </div>
-
-                    <img class="noborder" alt="api pipes" src="./images/statusNg1Ng2.png">
-
-                </section>
-
-
-            </section>
-
-
 <!-- QUESTIONS -->
-            <section  data-background="./images/angular2.png" class="chapter">
-                <div class="logo-orange"></div>
-                <h1 class="title">&nbsp;</h1>
-                <h2 class="subtitle">questions ?</h2>
-            </section>  
+
+            <section class="chapter" data-background="rgba(0, 0, 0, 0) linear-gradient(#0143a3, #0273d4) repeat scroll 0 0">
+                    <div class="logo-orange"></div>
+                    <div class="title">
+                        <header class="background-sky">
+                            <div class="hero background-superhero-paper is-large">
+                                <h1 class="hero-logo"></h1>
+                            </div>
+                        </header>
+                    </div>
+                    <h2 class="title subtitle text-center">questions ?</h2>
+            </section>
 
 <!-- ====== -->
 <!-- thanks -->
 <!-- ====== -->
-            <section  data-background="./images/angular2.png" class="chapter">
-                <div class="logo-orange"></div>
-                <h2 class="subtitle" style="padding-top:350px">merci :)</h2>
-                <div class="list"><small>
-                    <ul >
-                        <li style="color:#fff">Zenika <a target="blank" href="http://zenika.github.io/Presentations/20151022-matinale-angular2-theorie/">angular2 theorie</a> <small>@EmmanuelDemey</small></li>
-                        <li style="color:#fff">Zenika <a target="blank" href="http://zenika.github.io/Presentations/20151022-matinale-angular2-migration/">angular2 migration</a> <small>@EmmanuelDemey</small></li>
-                        <li style="color:#fff">Angular <a target="blank" href="https://angular.io/docs/ts/latest/guide/">Developer Guide</a></li>
-                        <li style="color:#fff">CR plazza <a target="blank" href="https://plazza.orange.com/groups/oswe-web/blog/2015/11/09/angular2-matinale-zenika">Matinale Zenika</a></li>
-                    </ul>
-                    </small>
+            <section class="chapter" data-background="rgba(0, 0, 0, 0) linear-gradient(#0143a3, #0273d4) repeat scroll 0 0">
+                <div class="background">
+                    <div class="logo-orange"></div>
+                    <div class="title">
+                        <header class="background-sky">
+                            <div class="hero background-superhero-paper is-large">
+                                <h1 class="hero-logo"></h1>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+                <h2 class="text-center subtitle">merci :)</h2>
+                <br>
+                <div class="container-fluid" style="font-size: 0.9em">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="list white">
+                                <ul >
+                                    <li><a target="blank" href="https://angular.io/docs/ts/latest/guide/">angular.io</a> <small>dev & style guide</small></li>
+                                    <li><a target="blank" href="https://angularclass.github.io/awesome-angular2/">awesome angular 2</a> <small>resources list</small></li>
+                                    <li><a target="blank" href="https://angularclass.github.io/angular2-webpack-starter/">Webpack Starter</a> <small>@AngularClass</small></li>
+                                    <li><a target="blank" href="http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html">Change detection</a> <small>@PascalPrecht</small></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="list white">
+                                <ul >
+                                    <li><a target="blank" href="http://slides.com/nadeensouthgate/deck#/">ng2 by example</a> <small>@noddysouthgate</small></li>
+                                    <li><a target="blank" href="http://slides.com/ocombe/mixit2016#/">angular2 MIX-IT</a> <small>@OCombe</small></li>
+                                    <li><a target="blank" href="http://zenika.github.io/Presentations/20151022-matinale-angular2-theorie/">angular2 theorie</a> <small>@EmmanuelDemey</small></li>
+                                    <li><a target="blank" href="https://gist.github.com/btroncone/a6e4347326749f938510">@ngrx/store</a> <small>@BTroncone</small></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
             </section>
 
-
 			</div>
+
 		</div>
+
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
