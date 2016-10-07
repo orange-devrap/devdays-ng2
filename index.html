@@ -83,10 +83,10 @@
                     </div>
                     <div  style="padding-top:50px;color:#fff">
                         <ol>
-                            <li>AngularJS : rappels</li>
-                            <li>Angular 2 : solutions</li>
-                            <li>Angular 2 : architecture</li>
-                            <li>live coding : chat ng2 & firebase</li>
+                            <li>AngularJS rappels</li>
+                            <li>Angular 2 plateforme</li>
+                            <li>Angular 2 architecture</li>
+                            <li>live coding "chat ng2 & firebase"</li>
                         </ol>
                     </div>
 				</section>
@@ -257,7 +257,7 @@
                             </div>
                         </header>        
                     </div>
-                    <h2 class="title subtitle text-center">solutions...</h2>
+                    <h2 class="title subtitle text-center">plateforme</h2>
 				</section>
 
                 <section class="slide">
@@ -431,7 +431,7 @@
                             </div>
                         </header>        
                     </div>
-                    <h2 class="title subtitle text-center">architecture...</h2>
+                    <h2 class="title subtitle text-center">architecture</h2>
 				</section>
 
                 
@@ -544,6 +544,9 @@ import ...;
   bootstrap: [ AppComponent ]    // main app view
 })
 export class AppModule { }
+
+// bootstrap app
+platformBrowserDynamic().bootstrapModule(AppModule);
 					</code></pre>
                     
                 </section>
@@ -630,15 +633,19 @@ export class MessagesComponent implements OnInit {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-3 text-right">
-                                <img src="./images/archi_05_template-metadata-component.png" width="172" class="noborder">
+                                <img src="./images/archi_05_metadata.png" class="noborder" style="padding-top:90px; width:250px; height:180px">
+                                <!--<img src="./images/archi_05_template-metadata-component.png" width="172" class="noborder">-->
                             </div>
                             <div class="col-xs-9">
                                 <div class="list condensed " style="font-size:0.9em;">
                                     <ul>
-                                        <li><p>decorator (@annotation)</p></li>
                                         <li><p>décrit <strong>comment</strong> traiter la classe</p></li>
+                                        <li><p>decorator</p>
+                                            <ul>
+                                                <li><p class="fts-md"><code>@Component</code>, <code>@Injectable</code>, <code>@Input</code>, <code>@Output</code>, ...</p></li>
+                                            </ul>
+                                        </li>
                                         <li><p>template + metadata + component <i class="fa fa-long-arrow-right" aria-hidden="true"></i> view</p></li>
-                                        <li><p class="fts-md"><code>@Component</code>, <code>@Injectable</code>, <code>@Input</code>, <code>@Output</code>, ...</p></li>
                                     </ul>
                                 </div>
                             </div>
@@ -652,51 +659,88 @@ export class MessagesComponent implements OnInit {
   templateUrl: 'message-form.component.html',
   styleUrls: ['message-form.component.css']
 })
-export class MessageFormComponent implements OnInit {
+                    </code></pre>
+<!--export class MessageFormComponent implements OnInit {
 
   @Input() roomId: string;
 
   @Output() selectMsg: EventEmitter;
 
   /* . . . */
-}
-                    </code></pre>
+}-->
 
                 </section>
-            
+
+
                 <section class="slide">
 
                     <h2 style="margin-bottom:5px"><logo></logo>view</h2>
-<p>template <code class="fts-md">messages.component.html</code></p>
 
-                    <pre><code class="hljs html" data-trim >
-<div *ngFor="let msg of (messages | async); trackBy: trackByKey;">
-    <ddo-message  [message]="msg" (click)="selectMessage(msg)"></ddo-message>
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.html</code>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_04_template.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs html" data-trim >
+<div *ngFor="let msg of messages | async">
+  <ddo-message [message]="msg" (click)="selectMessage(msg)">
+  </ddo-message>
 </div>
-</code></pre>
-                    
-<p>metadata <code class="fts-md">messages.component.ts</code> </p>
-                    <pre><code class="hljs" data-trim>
+                                </code></pre>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.ts</code>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_05_metadata.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs" data-trim>
 @Component({
   selector: 'ddo-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css']
 })
-</code></pre>
+                                </code></pre>
+                            </div>
+                        </div>
 
-<p>component <code class="fts-md">messages.component.ts</code> </p>
-                    <pre><code class="hljs" >
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_03_component.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs" data-trim>
 export class MessagesComponent implements OnInit {
-  @Input() roomId: string;
-  @Output() selectMsg: EventEmitter&lt;ChatMessage>;
-  
-  messages: Observable&lt;ChatMessage[]>;
+@Input() roomId: string;
+@Output() selectMsg: EventEmitter&lt;ChatMessage>;
 
-  constructor(private chatService: ChatMessagesService) { }
-  /* . . . */
-}                   </code></pre>
-                    
+messages: Observable&lt;ChatMessage[]>;
 
+constructor(private chatService: ChatMessagesService) { }
+/* . . . */
+}
+                                </code></pre>
+                            </div>
+                        </div>
+    
+                    </div>
 
                 </section>
 
@@ -794,7 +838,11 @@ export class MessagesComponent implements OnInit {
                     </div>
                     <div class="list condensed">
                         <ul>
-                            <li><p>class "simple" : aucune spécificitée liée à Angular</p></li>
+                            <li><p>classe "simple", aucune spécificitée liée à Angular</p>
+                                <ul>
+                                    <li><span>http data, calcul, logger, ...</span></li>
+                                </ul>
+                            </li>
                             <li><p>composants consomment les services fournis via DI</p></li>
                         </ul>
                     </div>
@@ -817,24 +865,25 @@ export class ChatMessagesService {
 
                     <div class="text-center">
                         <!--<img src="./images/archi_09_DI.png" height="200" class="noborder">-->
-                        <img src="./images/archi_09_DI_inject.png" height="250" class="noborder">
+                        <img src="./images/archi_09_DI_inject.png" height="300" class="noborder">
                     </div>
 
-                    <div class="list condensed fts-md">
+                    <div class="list condensed ">
                         <ul>
-                            <li><p>fournit aux composants les services nécessaires</p></li>
+                            <li><p>fournir les services aux composants</p></li>
                             <li><p>injecté via le constructeur du composant</p></li>
                             <pre style="width:100%"><code class="hljs" data-trim>
 export class MessagesComponent implements OnInit {
   constructor(private chatMessageService: ChatMessagesService) { }
 }  
                               </code></pre>
-                            <li><p>injector</p>
+
+                            <!--<li><p>injector</p>
                                 <ul>
                                     <li><span>maintient un container de services</span></li>
                                     <li><span>créé une instance de service via un provider</span></li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
 
