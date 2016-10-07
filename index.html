@@ -800,9 +800,33 @@ export class MessagesComponent implements OnInit {
 
                     <h2><logo></logo>pipes</h2>
 
-                    <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                    <div class="list condensed">
+                        <ul>
+                            <li><p>manipulation de donnée</p>
+                                <ul>
+                                    <li><span><code style="font-size:0.8em">{{ price | currency:'EUR':true }}</code> : 51.30 <i class="fa fa-long-arrow-right" aria-hidden="true"></i> 52.30€</span></li>
+                                </ul>
+                            </li>
+                            <li><p>Pipes disponibles dans le framework :</p>
+                                <ul>
+                                   <img class="noborder" height="110" alt="api pipes" src="./images/archi_10_pipes.png">
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
+                    <p class="fts-md"><code>UpperCasePipe.ts</code></p>
+                    <pre><code class="hljs" data-trim>
+@Pipe({name: 'uppercase'})
+export class UpperCasePipe implements PipeTransform {
+  transform(value: string): string {
+    if (isBlank(value)) return value;
+    if (typeof value !== 'string') {
+      throw new InvalidPipeArgumentError(UpperCasePipe, value);
+    }
+    return value.toUpperCase();
+  }
+}
+                    </code></pre>
                 </section>
 
 
