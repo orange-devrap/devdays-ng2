@@ -114,6 +114,11 @@ section.slide h2 > logo-ng {
     text-align: center;
     color: #222;
 }
+
+.cards .row .card.lines  {
+    padding-top: 11px;
+}
+
 .cards .row .card div.subtitle {
     position: relative;
     top:0px;

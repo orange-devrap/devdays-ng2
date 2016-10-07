@@ -75,13 +75,10 @@
 					<h4>&nbsp;</h4>
 					<div>
 						<ol>
-							<li>angular 1</li>
-                            <li>angular 2</li>
-                            <li>composants</li>
-                            <li>injection dépendances</li>
-                            <li>pipes</li>
-                            <li>routing & navigate</li>
-                            <li>roadmap</li>
+							<li>AngularJS : rappels</li>
+                            <li>Angular 2 : solutions</li>
+                            <li>Angular 2 : architecture</li>
+                            <li>live coding</li>
 						</ol>
 					</div>
 				</section>
@@ -109,7 +106,7 @@
                         <img src="./images/angular1_archi.png" height="292" class="noborder">
                     </div>
 
-					<div class="container-fluid">
+					<!--<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="list condensed">
@@ -130,28 +127,39 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>-->
 
+                    <div class="container-fluid cards" style="padding-top:50px">
+                        <div class="row">
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue lines">MVC<br><span class="fts-md">($scope)</span></div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">HTML++</div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue lines">two-way<br>data-binding</div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">Directives</div>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">Services</div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">D. Injection</div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">Filtres</div>
+							</div>
+							<div class="col-sm-3 fragment fade-up">
+								<div class="card blue">Testable</div>
+							</div>
+                        </div>
+                    </div>
 
-                    <!--<div class="list child">
-                        <ul>
-                            <li>
-                                <p>Framework (M)VC</p>
-                            </li>
-                            <li>
-                                <p>Html amélioré & data binding</p>
-                            </li>
-                            <li>
-                                <p>Composants réutilisables attachant un comportement au DOM (directives)</p>
-                            </li>
-                            <li>
-                                <p>Injection de dépendances (DI)</p>
-                            </li>
-                            <li>
-                                <p>Testable</p>
-                            </li>
-                        </ul>
-                    </div>-->
 
 				</section>
 
@@ -188,10 +196,9 @@
 					<p class="text-center" style="font-size:3em;color:white; padding-top:350px">au début c'est ...</p>
 				</section>
 
-				<section data-background="./images/boat.gif">
-					<p class="text-center" style="font-size:2em;color:white; padding-top:350px">mais quand on est dans le bateau ...</p>
+				<section data-background="./images/boat.gif" data-background-color="#000">
+					<p class="text-center" style="font-size:2em;color:white; padding-top:380px">mais quand on est dans le bateau ...</p>
 				</section>
-
 
             </section>
 
@@ -237,7 +244,7 @@
 
                     <h2><logo></logo>multi plateformes</h2>
 
-                    <div class="container-fluid cards" style="padding-top:40px">
+                    <div class="container-fluid cards" style="padding-top:80px">
                         <div class="row">
 							<div class="col-sm-3 text-center">
 								<img class="noborder" height="140" alt="web" src="./images/web.png">
@@ -281,7 +288,7 @@
 
                     <h2><logo></logo>framework to plateform</h2>
 
-                    <div class="container-fluid cards">
+                    <div class="container-fluid cards" style="padding-top:80px">
                         <div class="row fragment fade-up" data-fragment-index="3">
 							<div class="col-sm-3 fragment fade-up" data-fragment-index="5">
 								<div class="card green">i18n</div>
@@ -339,6 +346,7 @@
 							</div>
                         </div>
                     </div>
+
                 </section>
 
                 <section class="slide">
@@ -351,7 +359,7 @@
 								<div class="list condensed">
 								<ul>
 									<li><p>Superset Javascript (JS++)</p></li>
-									<li><p>Transpile ES6 to ES5</p></li>
+									<li><p>Transpile ES6 / ES5</p></li>
 									<li><p>Types</p></li>
 									<li><p>Annotations</p></li>
 									<li><p>Approche objet: Interfaces, classes abstraites, namespaces...</p></li>
@@ -521,13 +529,13 @@ export class AppModule { }
                         </div>
                     </div>
 
-                    <pre><code class="hljs " data-trim data-noescape>
+                    <pre><code class="hljs " data-trim >
 export class MessagesComponent implements OnInit {
 
   @Input() roomId: string;
-  @Output() selectMsg: EventEmitter<ChatMessage> = new EventEmitter<ChatMessage>();
+  @Output() selectMsg: EventEmitter &lt;ChatMessage>;
 
-  messages: Observable<ChatMessage[]>;
+  messages: Observable &lt;ChatMessage[]>;
 
   constructor(private chatService: ChatMessagesService) { }
 
@@ -556,7 +564,7 @@ export class MessagesComponent implements OnInit {
                             <div class="col-sm-6 " style="font-size:0.9em;">
                                 <div class="list ">
                                     <ul>
-                                        <li><p>HTML+ pour rendre le composant</p></li>
+                                        <li><p>HTML++ pour rendre le composant</p></li>
                                         <li><p>Angular's template syntaxe</p></li>
                                         <li><p>arbre de composants</p></li>
                                     </ul>
@@ -590,7 +598,7 @@ export class MessagesComponent implements OnInit {
                                         <li><p>decorator (@annotation)</p></li>
                                         <li><p>décrit <strong>comment</strong> traiter la classe</p></li>
                                         <li><p>template + metadata + component <i class="fa fa-long-arrow-right" aria-hidden="true"></i> view</p></li>
-                                        <li><p><code>@Injectable</code>, <code>@Input</code>, <code>@Output</code>, ...</p></li>
+                                        <li><p class="fts-md"><code>@Component</code>, <code>@Injectable</code>, <code>@Input</code>, <code>@Output</code>, ...</p></li>
                                     </ul>
                                 </div>
                             </div>
@@ -618,6 +626,42 @@ export class MessageFormComponent implements OnInit {
             
                 <section class="slide">
 
+                    <h2 style="margin-bottom:5px"><logo></logo>view</h2>
+<p>template <code class="fts-md">messages.component.html</code></p>
+
+                    <pre><code class="hljs html" data-trim >
+<div *ngFor="let msg of (messages | async); trackBy: trackByKey;">
+    <ddo-message  [message]="msg" (click)="selectMessage(msg)"></ddo-message>
+</div>
+</code></pre>
+                    
+<p>metadata <code class="fts-md">messages.component.ts</code> </p>
+                    <pre><code class="hljs" data-trim>
+@Component({
+  selector: 'ddo-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
+})
+</code></pre>
+
+<p>component <code class="fts-md">messages.component.ts</code> </p>
+                    <pre><code class="hljs" >
+export class MessagesComponent implements OnInit {
+  @Input() roomId: string;
+  @Output() selectMsg: EventEmitter&lt;ChatMessage>;
+  
+  messages: Observable&lt;ChatMessage[]>;
+
+  constructor(private chatService: ChatMessagesService) { }
+  /* . . . */
+}                   </code></pre>
+                    
+
+
+                </section>
+
+                <section class="slide">
+
                     <h2><logo></logo>data binding</h2>
                     <br>
 
@@ -625,10 +669,6 @@ export class MessageFormComponent implements OnInit {
                         <div class="row">
                             <div class="col-sm-4 text-center">
                                     <img src="./images/archi_06_binding.png" height="350" class="noborder">
-                                <!--<div class="row">
-                                </div>
-                                <div class="row">
-                                </div>-->
                             </div>
                             <div class="col-sm-8 text-center">
                                     <div class="list " style="font-size:0.95em;">
@@ -641,11 +681,6 @@ export class MessageFormComponent implements OnInit {
                                     </div>
                             </div>
                         </div>
-                        <!--<div class="row">
-                            <div class="col-sm-12 text-center">
-                                <img src="./images/archi_06_binding_global.png" height="500" class="noborder">
-                            </div>
-                        </div>-->
                     </div>
 
                 </section>
@@ -737,8 +772,28 @@ export class Logger {
                     <h2><logo></logo>dependency injection</h2>
 
                     <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
+                        <!--<img src="./images/archi_09_DI.png" height="200" class="noborder">-->
+                        <img src="./images/archi_09_DI_inject.png" height="250" class="noborder">
                     </div>
+
+                    <div class="list condensed fts-md">
+                        <ul>
+                            <li><p>fournit aux composants les services nécessaires</p></li>
+                            <li><p>injecté via le constructeur du composant</p></li>
+                            <pre style="width:100%"><code class="hljs" data-trim>
+export class MessagesComponent implements OnInit {
+  constructor(private chatMessageService: ChatMessagesService) { }
+}  
+                              </code></pre>
+                            <li><p>injector</p>
+                                <ul>
+                                    <li><span>maintient un container de services</span></li>
+                                    <li><span>créé une instance de service via un provider</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
                 </section>
             
                 <section class="slide">
@@ -749,7 +804,9 @@ export class Logger {
                         <img src="./images/archi_0.png" height="200" class="noborder">
                     </div>
                 </section>
-            
+
+
+
                 <section class="slide">
 
                     <h2><logo></logo>HTTP</h2>
@@ -1166,7 +1223,8 @@ export class ExponentialStrengthPipe implements PipeTransform {
 				history: true,
 				center: false,
 			    width: 1024, // 960 - 1024
-			    height: 800, // 700 - 746
+			    height: 846, // 700 - 746
+				slideNumber: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [

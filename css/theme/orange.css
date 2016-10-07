@@ -288,5 +288,7 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #ff6600; }
+  color: #ff6600;
+  background-color: rgba(0, 0, 0, 0);
+}
 
