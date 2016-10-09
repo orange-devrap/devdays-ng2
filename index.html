@@ -105,6 +105,11 @@
                     <h2 class="title subtitle text-center">rappels...</h2>
 				</section>
 
+                <section class="slide">
+                    <h2><logo></logo>historique</h2>
+                    <h2>TODO histo 2009</h2>
+                </section>
+
 
                 <section class="slide">
 
@@ -553,7 +558,80 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
                 <section class="slide">
 
-                    <h2><logo></logo>component</h2>
+                    <h2 style="margin-bottom:5px"><logo></logo>component</h2>
+
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.html</code>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_04_template.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs html" data-trim >
+<div *ngFor="let msg of messages | async">
+  <ddo-message [message]="msg" (click)="selectMessage(msg)">
+  </ddo-message>
+</div>
+                                </code></pre>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.ts</code>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_05_metadata.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs" data-trim>
+@Component({
+  selector: 'ddo-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
+})
+                                </code></pre>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <img src="./images/archi_03_component.png" width="172" class="noborder" style="padding-top:20px">            
+                            </div>
+                            <div class="col-xs-10">
+
+                                <pre><code class="hljs" data-trim>
+export class MessagesComponent implements OnInit {
+@Input() roomId: string;
+@Output() selectMsg: EventEmitter&lt;ChatMessage>;
+
+messages: Observable&lt;ChatMessage[]>;
+
+constructor(private chatService: ChatMessagesService) { }
+/* . . . */
+}
+                                </code></pre>
+                            </div>
+                        </div>
+    
+                    </div>
+
+                </section>
+
+
+                <section class="slide">
+
+                    <h2><logo></logo>component class</h2>
 
                     <div class="container-fluid">
                         <div class="row">
@@ -655,10 +733,11 @@ export class MessagesComponent implements OnInit {
                     <pre><code class="hljs" data-trim>
 @Component({
   moduleId: module.id,
-  selector: 'ddo-message-form',
-  templateUrl: 'message-form.component.html',
-  styleUrls: ['message-form.component.css']
+  selector: 'ddo-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
 })
+
                     </code></pre>
 <!--export class MessageFormComponent implements OnInit {
 
@@ -672,77 +751,6 @@ export class MessagesComponent implements OnInit {
                 </section>
 
 
-                <section class="slide">
-
-                    <h2 style="margin-bottom:5px"><logo></logo>view</h2>
-
-                    <div class="container-fluid">
-                        
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <code class="fts-md">messages.component.html</code>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img src="./images/archi_04_template.png" width="172" class="noborder" style="padding-top:20px">            
-                            </div>
-                            <div class="col-xs-10">
-
-                                <pre><code class="hljs html" data-trim >
-<div *ngFor="let msg of messages | async">
-  <ddo-message [message]="msg" (click)="selectMessage(msg)">
-  </ddo-message>
-</div>
-                                </code></pre>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <code class="fts-md">messages.component.ts</code>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img src="./images/archi_05_metadata.png" width="172" class="noborder" style="padding-top:20px">            
-                            </div>
-                            <div class="col-xs-10">
-
-                                <pre><code class="hljs" data-trim>
-@Component({
-  selector: 'ddo-messages',
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.css']
-})
-                                </code></pre>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img src="./images/archi_03_component.png" width="172" class="noborder" style="padding-top:20px">            
-                            </div>
-                            <div class="col-xs-10">
-
-                                <pre><code class="hljs" data-trim>
-export class MessagesComponent implements OnInit {
-@Input() roomId: string;
-@Output() selectMsg: EventEmitter&lt;ChatMessage>;
-
-messages: Observable&lt;ChatMessage[]>;
-
-constructor(private chatService: ChatMessagesService) { }
-/* . . . */
-}
-                                </code></pre>
-                            </div>
-                        </div>
-    
-                    </div>
-
-                </section>
 
                 <section class="slide">
 
