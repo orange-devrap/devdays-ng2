@@ -751,7 +751,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
                                 </code></pre>
                             </div>
                             <div class="">
-                                <div class="list condensed " style="font-size:0.65em">
+                                <div class="list condensed " style="font-size:0.7em">
                                     <ul>
                                         <li>
                                             <p>HTML++ pour rendre le composant</p>
@@ -788,15 +788,15 @@ platformBrowserDynamic().bootstrapModule(AppModule);
                                 </code></pre>
                             </div>
                             <div class="">
-                                <div class="list condensed " style="font-size:0.65em;">
+                                <div class="list condensed " style="font-size:0.7em;">
                                     <ul>
                                         <li>
                                             <p>décrit <strong>comment</strong> traiter la classe</p>
                                         </li>
                                         <li>
-                                            <p class="fts-md"><code>@Component</code>, <code>@Injectable</code>, <code>@Input</code>,
-                                                <code>@Output</code>, ...
-                                            </p>
+                                            <p class="fts-md"><code>@Component</code></p>
+                                            <!--, <code>@Injectable</code>, <code>@Input</code>,
+                                                <code>@Output</code>, ...-->
                                         </li>
                                     </ul>
                                 </div>
@@ -809,7 +809,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
                             </div>
                             <div class="col-xs-7" style="padding-left: 20px;">
 
-                                <pre><code class="hljs" style="font-size:0.85em" data-trim>
+                                <pre><code class="hljs" style="font-size:0.95em" data-trim>
 export class MessagesComponent implements OnInit {
   @Input() roomId: string;
   @Output() selectMsg: EventEmitter&lt;ChatMessage>;
@@ -823,7 +823,7 @@ export class MessagesComponent implements OnInit {
                                 </code></pre>
                             </div>
                             <div class="">
-                                <div class="list condensed" style="font-size:0.65em;">
+                                <div class="list condensed" style="font-size:0.68em;">
                                     <ul>
                                         <li>
                                             <p>classe contenant la logique applicative</p>
@@ -1207,6 +1207,9 @@ export class HighlightDirective {
                                         <li>
                                             <p>composants consomment les services fournis via DI</p>
                                         </li>
+                                        <li>
+                                            <p>decorator : <code>@Injectable</code></p>                                            
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -1229,7 +1232,7 @@ export class HighlightDirective {
                             </li>
                         </ul>
                     </div>-->
-                    <div style="padding-top:60px">
+                    <div style="padding-top:1px">
                         <pre><code class="hljs" data-trim>
 import { Injectable } from '@angular/core';
 
@@ -1453,52 +1456,146 @@ this.router.navigate(['/rooms']);
                 <section class="slide">
 
                     <h2 class="no-margin-bt">
-                        <logo></logo>HTTP services
+                        <logo></logo>HTTP client
                     </h2>
 
                     <p class="fts-md" style="font-style: italic">
-                        "make the corresponding HTTP calls to a remote server's web API"
+                        "HTTP is the primary protocol for browser/server communication"
                     </p>
 
-                    <div class="container-fluid" style="padding-top: 10px; padding-bottom: 30px">
+                    <div class="container-fluid">
                         <div class="row">
-                            <div class="col-xs-5">
-                                <div class="text-center">
-                                    <img class="noborder" style="height:280px" alt="router pattern" src="./images/router-pattern.png">
+                            <div class="col-xs-6">
+                                <h3>Promise</h3>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-5 text-right">
+                                            <img class="noborder" height="333" src="./images/promise.png">
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <div class="list condensed" style="font-size: 0.7em; margin-left: 10px!important">
+                                                <ul>
+                                                    <li>
+                                                        <p>gérer les appels asynchrones</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            meilleure gestion des callbacks
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            traitement d'une valeur
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            appelée si résolue
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            ne peut pas être annulée
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            catch & finally
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                
                             </div>
-                            <div class="col-xs-7">
-                                <div class="list condensed fts-md">
-                                    <ul>
-                                        <li>
-                                            <p>chaque <strong>composant</strong> est routable</p>
-                                        </li>
-                                        <li>
-                                            <p>les routes se font entre <strong>composants</strong></p>
-                                        </li>
-                                        <li>
-                                            <p>chaque composant a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p>
-                                        </li>
-                                    </ul>
+                            <div class="col-xs-6">
+                                <h3>Observable</h3>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-5 text-right">
+                                            <img class="noborder" height="333" src="./images/observable.png">
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <div class="list condensed" style="font-size: 0.7em; margin-left: 10px!important">
+                                                <ul>
+                                                    <li>
+                                                        <p>stream</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            meilleure gestion des callbacks
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            time based
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            'lazy' jusqu'à l'appel à subscribe
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            unsubscribe, retry, cancel
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            catch & finally
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                
                             </div>
 
                         </div>
+
+                        
+                        <div class="row">
+                            <div class="col-xs-6">
+                    <pre style="margin-left:0px"><code  data-trim>
+// As a Promise
+getHeroes (): Promise < Hero[] > {
+    return this.http.get(this.heroesUrl)
+                    .toPromise()
+                    .then (this.extractData)
+                    .catch(this.handleError);
+}
+                    </code></pre>
+<!--                                
+                    <pre style="margin-left:0px"><code data-trim>
+// As a Promise
+getHeroes (): Promise < Hero[] > {
+    return this.http.get(this.heroesUrl)
+                .toPromise()
+                .then(this.extractData)
+                .catch(this.handleError);
+}
+                    </code></pre>-->
+                                
+                            </div>
+                            <div class="col-xs-6">
+                    <pre style="margin-left:0px"><code  data-trim>
+// As an Observable
+getHeroes (): Observable < Hero[] > {
+    return this.http.get(this.heroesUrl)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+}
+                    </code></pre>
+                            </div>
+                        </div>
+                        
                     </div>
 
-                    <pre><code class="hljs" data-trim>
-// configuration routes                        
-const appRoutes: Routes = [
-   { path:'',      component:LoginComponent },
-   { path:'rooms', component:RoomsComponent, canActivate:[AuthGuardService] },
-];
-
-// navigate from template
-<a routerLink="/rooms">rooms</a>
-
-// navigate from component
-this.router.navigate(['/rooms']);
-                    </code></pre>
                 </section>
 
                 <!--<section class="slide">
@@ -1613,7 +1710,7 @@ this.router.navigate(['/rooms']);
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); /*console.log('hljs.listLanguages', hljs.listLanguages());*/ } }
 				]
 			});
 		</script>
