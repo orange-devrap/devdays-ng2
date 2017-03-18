@@ -27,15 +27,15 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="lib/font-awesome-4.3.0/css/font-awesome.min.css">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
 
     <!-- CSS orange boilerplate -->
-    <link rel="stylesheet" href="css/orange-boilerplate.css" id="theme">
+    <link rel="stylesheet" href="css/orange-boilerplate.css" id="orangeboilerplate">
 
     <!-- CSS angular2 -->
-    <link rel="stylesheet" href="css/orange-angular2.css" id="theme">
+    <link rel="stylesheet" href="css/orange-angular2.css" id="ng2theme">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
     <!-- Printing and PDF exports -->
     <script>
 			var link = document.createElement( 'link' );
@@ -109,7 +109,9 @@
 
                 <section class="slide">
                     <h2>
-                        <logo-ng></logo-ng>historique</h2>
+                        <logo-ng></logo-ng>historique
+                    </h2>
+                    <p>&nbsp</p>
 
                     <div class="container-fluid">
 
@@ -186,7 +188,9 @@
                 <section class="slide">
 
                     <h2>
-                        <logo-ng></logo-ng>architecture</h2>
+                        <logo-ng></logo-ng>architecture
+                    </h2>
+                    <p>&nbsp</p>
 
                     <div class="text-center">
                         <img src="./images/angular1_archi.png" height="292" class="noborder">
@@ -252,27 +256,35 @@
                 <section class="slide">
 
                     <h2>
-                        <logo-ng></logo-ng>points faibles</h2>
+                        <logo-ng></logo-ng>points faibles
+                    </h2>
+                    <p>&nbsp;</p>
 
-                    <div class="list child">
-                        <ul>
-                            <li>
-                                <p class="info"><strong>directives</strong></p>
-                                <p>syntaxe obscure, complexité (compile, link) ...</p>
-                            </li>
-                            <li>
-                                <p class="info"><strong>two-way data-binding</strong></p>
-                                <p>bind once, performance ...</p>
-                            </li>
-                            <li>
-                                <p class="info"><strong>scopes</strong></p>
-                                <p>hiérarchie des scopes, conflit ...</p>
-                            </li>
-                            <li>
-                                <p class="info"><strong>et bien d'autres encore</strong></p>
-                                <p>service/factory/provider, X implémentations possibles ...</p>
-                            </li>
-                        </ul>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-offset-2 col-xs-10">
+                            <div class="list child">
+                                <ul>
+                                    <li>
+                                        <p class="info"><strong>directives</strong></p>
+                                        <p>syntaxe obscure, complexité (compile, link) ...</p>
+                                    </li>
+                                    <li>
+                                        <p class="info"><strong>two-way data-binding</strong></p>
+                                        <p>bind once, performance ...</p>
+                                    </li>
+                                    <li>
+                                        <p class="info"><strong>scopes</strong></p>
+                                        <p>hiérarchie des scopes, conflit ...</p>
+                                    </li>
+                                    <li>
+                                        <p class="info"><strong>et bien d'autres encore</strong></p>
+                                        <p>service/factory/provider, X implémentations possibles ...</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
                     </div>
 
                 </section>
@@ -282,23 +294,36 @@
                 <section data-background-color="#000">
                     <div class="container-fluid">
                         <div class="row text-center">
-                            <img src="./images/magic.gif" class="noborder" style="height:800px">
+                            <img src="./images/magic.gif" class="noborder" style="height:850px">
                         </div>
                     </div>
-                    <div style="position: absolute; top:420px; width:100%" class="text-center">
+                    <div style="position: absolute; top:470px; width:100%" class="text-center">
                         <p style="font-size:2.7em;color:white;">au début c'est ...</p>
                     </div>
                 </section>
 
+                <section data-background-color="#000">
+                    <div class="container-fluid">
+                        <div class="row text-center">
+                            <img src="./images/crazy-state01.gif" class="noborder" style="height:850px">
+                        </div>
+                    </div>
+                    <div style="position: absolute; top:520px; width:100%" class="text-center">
+                        <p style="font-size:2.7em;color:white;">mais quand on voulait écrire une directive...</p>
+                    </div>
+                </section>
+<!--
                 <section data-background="./images/crazy-state01.gif" data-background-color="#000">
                     <p class="text-center" style="font-size:2.5em;font-weight: bold;color:white; padding-top:520px">mais quand on voulait écrire une directive...</p>
-                </section>
+                </section>-->
 
                 <section class="slide">
                     <h2>
-                        <logo-ng></logo-ng>ng-europe oct. 2014</h2>
+                        <logo-ng></logo-ng>ng-europe oct. 2014
+                    </h2>
+                    <p>&nbsp;</p>
 
-                    <div class="container">
+                    <div class="container-fluid">
 
                         <div class="row">
 
@@ -424,7 +449,7 @@
                     <h2>
                         <logo></logo>framework to plateform</h2>
 
-                    <div class="container-fluid cards" style="padding-top:80px">
+                    <div class="container-fluid cards" style="padding-top:140px">
                         <div class="row fragment fade-up" data-fragment-index="3">
                             <div class="col-xs-3 fragment fade-up" data-fragment-index="5">
                                 <div class="card green">i18n</div>
@@ -498,9 +523,10 @@
                 <section class="slide">
 
                     <h2>
-                        <logo></logo>Typescript</h2>
+                        <logo></logo>Typescript
+                    </h2>
 
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="padding-top:50px">
                         <div class="row">
                             <div class="col-xs-5">
                                 <div class="list condensed">
@@ -530,8 +556,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-7 text-right">
-                                <img class="noborder" width="100%" src="./images/typescript.png">
+                            <div class="col-xs-7 text-center">
+                                <img class="noborder" width="80%" src="./images/typescript.png">
                             </div>
                         </div>
                     </div>
@@ -561,7 +587,12 @@
                 <section class="slide">
 
                     <h2>
-                        <logo></logo>architecture</h2>
+                        <logo></logo>architecture
+                    </h2>
+
+                    <p class="fts-md" style="font-style: italic">
+                        "The architecture diagram identifies the eight main building blocks of an Angular application"
+                    </p>
 
                     <div class="text-center">
                         <img src="./images/archi_01_global.png" height="350" class="noborder">
@@ -635,8 +666,13 @@
                 <section class="slide">
 
                     <h2>
-                        <logo></logo>module</h2>
+                        <logo></logo>module
+                    </h2>
 
+                    <p class="fts-md" style="font-style: italic">
+                        "Tell Angular how to construct and bootstrap the app & help organize it into cohesive blocks of functionality"
+                    </p>
+                    
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-4 text-right">
@@ -665,7 +701,6 @@
                     <pre><code class="hljs" data-trim>
 import { NgModule }                 from '@angular/core';
 import { ChatMessagesService, ... } from './shared/services';
-import ...;
 @NgModule({
   declarations: [ // components, directives & pipes
     AppComponent, RoomsComponent, ChatComponent ...
@@ -686,8 +721,170 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
                 <section class="slide">
 
+                    <h2>
+                        <logo></logo>component
+                    </h2>
+
+                    <p class="fts-md" style="font-style: italic">
+                        "Controls a patch of screen called a view"
+                    </p>
+
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.html</code>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <img src="./images/archi_04_template.png" class="noborder" style="padding-top:20px;max-width: none;">
+                            </div>
+                            <div class="col-xs-7" style="padding-left: 20px;">
+
+                                <pre><code class="hljs html" data-trim>
+<div *ngFor="let msg of messages | async">
+  <ddo-message [message]="msg" (click)="select(msg)">
+  </ddo-message>
+</div>
+                                </code></pre>
+                            </div>
+                            <div class="">
+                                <div class="list condensed " style="font-size:0.65em">
+                                    <ul>
+                                        <li>
+                                            <p>HTML++ pour rendre le composant</p>
+                                            <!--<p>The visually rendered part of a component (HTML)</p>-->
+                                        </li>
+                                        <li>
+                                            <p>Angular's template syntaxe</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <code class="fts-md">messages.component.ts</code>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <div style="padding-right: 5px">
+                                    <img src="./images/archi_05_metadata.png" width="160" class="noborder" style="padding-top:60px;max-width: none;">
+                                </div>
+                            </div>
+                            <div class="col-xs-7" style="padding-left: 20px;">
+
+                                <pre><code class="hljs" data-trim>
+@Component({
+  selector: 'ddo-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
+})
+                                </code></pre>
+                            </div>
+                            <div class="">
+                                <div class="list condensed " style="font-size:0.65em;">
+                                    <ul>
+                                        <li>
+                                            <p>décrit <strong>comment</strong> traiter la classe</p>
+                                        </li>
+                                        <li>
+                                            <p class="fts-md"><code>@Component</code>, <code>@Injectable</code>, <code>@Input</code>,
+                                                <code>@Output</code>, ...
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <img src="./images/archi_03_component.png" class="noborder" style="padding-top:80px;max-width: none;">
+                            </div>
+                            <div class="col-xs-7" style="padding-left: 20px;">
+
+                                <pre><code class="hljs" style="font-size:0.85em" data-trim>
+export class MessagesComponent implements OnInit {
+  @Input() roomId: string;
+  @Output() selectMsg: EventEmitter&lt;ChatMessage>;
+  private msgs: Observable&lt;ChatMessage[]>;
+
+  constructor(private chatSvc: ChatMessagesService) { }
+
+  ngOnInit() { this.msgs = this.chatSvc.getMsg(this.roomId); }
+
+  select(msg: ChatMessage) { this.selectMsg.emit(msg); }
+                                </code></pre>
+                            </div>
+                            <div class="">
+                                <div class="list condensed" style="font-size:0.65em;">
+                                    <ul>
+                                        <li>
+                                            <p>classe contenant la logique applicative</p>
+                                        </li>
+                                        <li>
+                                            <p>interagit via : properties / methods</p>
+                                        </li>
+                                        <li>
+                                            <p>lifecycle hooks (init, check, afterX, destroy)</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <section class="slide">
+
+                    <h2 style="margin-bottom:0">
+                        <logo></logo>data binding
+                    </h2>
+                    <p class="fts-md" style="font-style: italic">
+                        "mechanism for coordinating parts of a template with parts of a component"
+                    </p>
+
+                    <div class="container-fluid" style="font-size:0.9em">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                <div class="row"  >
+                                    <h3 style="color:#50be87; font-weight: bold">template & component</h3>
+                                    <img src="./images/archi_06_binding_global.png" height="250" class="noborder">
+                                </div>
+                                <div class="row" style="padding-top:10px">
+                                    <h3 style="color:#50be87; font-weight: bold">parent & child</h3>
+                                    <img src="./images/archi_06_parent-child-binding.png" height="220" class="noborder">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 text-center">
+                                <div class="row" style="padding-top:80px">
+                                    <h3 style="color:#50be87; font-weight: bold">type binding</h3>
+                                    <img src="./images/archi_06_binding.png" height="300" class="noborder">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+<!--
+                <section class="slide">
+
                     <h2 style="margin-bottom:5px">
-                        <logo></logo>component</h2>
+                        <logo></logo>component old</h2>
 
                     <div class="container-fluid">
 
@@ -816,7 +1013,6 @@ export class MessagesComponent implements OnInit {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-xs-6 text-center">
-                                <!--<img src="./images/archi_04_template.png" height="200" class="noborder">-->
                                 <img src="./images/archi_04_tree_components.png" height="400" class="noborder">
                             </div>
                             <div class="col-xs-6 " style="font-size:0.9em;">
@@ -856,7 +1052,6 @@ export class MessagesComponent implements OnInit {
                         <div class="row">
                             <div class="col-xs-3 text-right">
                                 <img src="./images/archi_05_metadata.png" class="noborder" style="padding-top:90px; width:250px; height:180px">
-                                <!--<img src="./images/archi_05_template-metadata-component.png" width="172" class="noborder">-->
                             </div>
                             <div class="col-xs-9">
                                 <div class="list condensed " style="font-size:0.9em;">
@@ -891,19 +1086,282 @@ export class MessagesComponent implements OnInit {
 })
 
                     </code></pre>
-                    <!--export class MessageFormComponent implements OnInit {
 
-  @Input() roomId: string;
+                </section>
+-->
 
-  @Output() selectMsg: EventEmitter;
+                <section class="slide">
 
-  /* . . . */
-}-->
+                    <h2 style="margin-bottom:0">
+                        <logo></logo>directive
+                    </h2>
 
+                    <p class="fts-md" style="font-style: italic">
+                        "Changes the appearance or behavior of a DOM element"
+                    </p>
+                    
+                    <div class="container-fluid fts-md">
+                        
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="text-center" style="padding-top: 40px">
+                                    <img src="./images/archi_07_directive.png" height="250" class="noborder">
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="list condensed">
+                                    <ul>
+                                        <!--<li>
+                                            <p><code class="fts-md">@Directive</code> : classe avec metadata</p>
+                                        </li>
+                                        <li>
+                                            <p><code class="fts-md">@Component</code> : directive avec template</p>
+                                        </li>-->
+                                        <li>
+                                            <p><strong>structural</strong>: DOM <i class="fa fa-long-arrow-right" aria-hidden="true"></i>                                    add/remove/replace</p>
+                                        </li>
+                                        <div style="padding-bottom: 10px">
+                                        <pre style="width:100%;"><code class="hljs html" data-trim>
+<div *ngFor="let msg of messages | async">
+    [...]
+</div>
+                                        </code></pre>
+                                        </div>
+                                        <li>
+                                            <p><strong>attribute</strong>: element <i class="fa fa-long-arrow-right" aria-hidden="true"></i>                                    apparence/comportement</p>
+                                        </li>
+                                        <pre style="width:100%"><code class="hljs html" data-trim>
+ <input [ngClass]="setClasses()" [(ngModel)]="message.body" >
+                                        </code></pre>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="container-fluid"  style="background-color: #ddd; margin-top: 30px" >
+                        
+                        <!--<div class="row" >
+                            <h4>&nbsp;</h4>
+                        </div>-->
+                        <!--<p>exemple</p>-->
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <pre><code class="hljs html" data-trim>
+<h1>My First Angular 2 App</h1>
+
+<p myHighlight>Highlight me!</p>
+                                </code></pre>
+                                <div class="text-center" style="padding-top: 5px">
+                                    <img src="./images/directive-exemple.png" class="noborder">
+                                </div>
+                            </div>
+                        
+                            <div class="col-xs-8">
+                            <pre><code class="hljs " data-trim>
+import { Directive, ElementRef, Input } from '@angular/core';
+
+@Directive({ selector: '[myHighlight]' })
+export class HighlightDirective {
+
+    constructor(el: ElementRef) {
+        el.nativeElement.style.backgroundColor = 'yellow';
+    }
+}
+                                </code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+
+                        
+                    
+                </section>
+
+                <section class="slide">
+
+                    <h2 class="no-margin-bt">
+                        <logo></logo>service
+                    </h2>
+                    <p class="fts-md" style="font-style: italic">
+                        "Responsible for providing the components with it's data via DI"
+                    </p>                    
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="text-right" style="padding-top: 30px">
+                                    <img src="./images/archi_08_service.png" height="200" class="noborder">
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <p>classe "simple", aucune spécificitée liée à Angular</p>
+                                            <ul>
+                                                <li><span>http data, calcul, logger, ...</span></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>composants consomment les services fournis via DI</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="text-center">
+                        <img src="./images/archi_08_service.png" height="200" class="noborder">
+                    </div>
+                    <div class="list condensed">
+                        <ul>
+                            <li>
+                                <p>classe "simple", aucune spécificitée liée à Angular</p>
+                                <ul>
+                                    <li><span>http data, calcul, logger, ...</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>composants consomment les services fournis via DI</p>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <div style="padding-top:60px">
+                        <pre><code class="hljs" data-trim>
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ChatMessagesService {
+
+  constructor(private af: AngularFire) { }
+
+  getMessagesByRoomId(roomId: string): Observable&lt;ChatMessage[]> { 
+      /*..*/
+  }
+}
+                        </code></pre>
+                    </div>
+                </section>
+
+
+                <section class="slide">
+
+                    <h2>
+                        <logo></logo>dependency injection
+                    </h2>
+
+                    <p class="fts-md" style="font-style: italic">
+                        "Angular's dependency injection system creates and delivers dependent services 'just-in-time'"
+                    </p>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="text-center" style="padding-top: 30px">
+                                     <img src="./images/archi_09_DI_inject.png" height="300" class="noborder">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="list "  style="padding-top: 60px">
+                                    <ul>
+                                        <li>
+                                            <p>fournit les services aux composants</p>
+                                        </li>
+                                        <li>
+                                            <p>injecté via le constructeur du composant</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top:40px">
+                            <pre><code class="hljs" data-trim>
+@Component(...)
+export class MessagesComponent implements OnInit {
+
+  constructor(private chatMessageService: ChatMessagesService) {
+      // ...
+  }
+
+}  
+                              </code></pre>
+                    </div>
+                     
+<!--
+                    <div class="text-center">
+                        <img src="./images/archi_09_DI_inject.png" height="300" class="noborder">
+                    </div>
+
+                    <div class="list condensed ">
+                        <ul>
+                            <li>
+                                <p>fournir les services aux composants</p>
+                            </li>
+                            <li>
+                                <p>injecté via le constructeur du composant</p>
+                            </li>
+                        </ul>
+                    </div>-->
+               </section>
+
+
+                <section class="slide">
+
+                    <h2>
+                        <logo></logo>pipes
+                    </h2>
+
+                    <p class="fts-md" style="font-style: italic">
+                        "Transform displayed values within a template"
+                    </p>                    
+
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <div class="list condensed">
+                                    <ul>
+                                        <li>
+                                            <p>manipulation de donnée</p>
+                                            <ul>
+                                                <li><span><code style="font-size:0.8em">{{ price | currency:'EUR':true }}</code> : 51.30 <i class="fa fa-long-arrow-right" aria-hidden="true"></i> 52.30€</span></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>Pipes disponibles dans le framework :</p>
+                                            <ul>
+                                                <img class="noborder" height="110" alt="api pipes" src="./images/archi_10_pipes.png">
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p class="fts-md"><code>UpperCasePipe.ts</code></p>
+                    <pre><code class="hljs" data-trim>
+@Pipe({name: 'uppercase'})
+export class UpperCasePipe implements PipeTransform {
+  transform(value: string): string {
+    if (isBlank(value)) return value;
+    if (typeof value !== 'string') {
+      throw new InvalidPipeArgumentError(UpperCasePipe, value);
+    }
+    return value.toUpperCase();
+  }
+}
+                    </code></pre>
                 </section>
 
 
 
+
+<!--
                 <section class="slide">
 
                     <h2>
@@ -936,231 +1394,108 @@ export class MessagesComponent implements OnInit {
                         </div>
                     </div>
 
-                </section>
+                </section>-->
+
+
+
                 <section class="slide">
 
-                    <h2 style="margin-bottom:0">
-                        <logo></logo>binding communication</h2>
+                    <h2 class="no-margin-bt">
+                        <logo></logo>router
+                    </h2>
+
                     <p class="fts-md" style="font-style: italic">
-                        "Angular processes all data bindings once per JavaScript event cycle, from the root of the application component tree through
-                        all child components."
+                        Enables navigation from one view to the next as users perform application tasks
                     </p>
-                    <div class="container-fluid" style="font-size:0.9em">
+
+                    <div class="container-fluid" style="padding-top: 10px; padding-bottom: 30px">
                         <div class="row">
-                            <div class="col-xs-6 text-center">
-                                <div class="row">
-                                    <img src="./images/archi_06_binding_global.png" height="300" class="noborder">
-                                </div>
-                                <div class="row">
-                                    <img src="./images/archi_06_parent-child-binding.png" height="300" class="noborder">
+                            <div class="col-xs-5">
+                                <div class="text-center">
+                                    <img class="noborder" style="height:280px" alt="router pattern" src="./images/router-pattern.png">
                                 </div>
                             </div>
-                            <div class="col-xs-6">
-                                <div class="row" style="height:350px;padding-top:50px">
-                                    <div class="list">
-                                        <ul>
-                                            <li>
-                                                <p>entre template et component</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="list">
-                                        <ul>
-                                            <li>
-                                                <p>entre parent et enfant</p>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="col-xs-7">
+                                <div class="list condensed fts-md">
+                                    <ul>
+                                        <li>
+                                            <p>chaque <strong>composant</strong> est routable</p>
+                                        </li>
+                                        <li>
+                                            <p>les routes se font entre <strong>composants</strong></p>
+                                        </li>
+                                        <li>
+                                            <p>chaque composant a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
-                </section>
-
-                <section class="slide">
-
-                    <h2 style="margin-bottom:0">
-                        <logo></logo>directive</h2>
-
-                    <div class="text-center">
-                        <img src="./images/archi_07_directive.png" height="250" class="noborder">
-                    </div>
-                    <div class="list condensed">
-                        <ul>
-                            <li>
-                                <p><code class="fts-md">@Directive</code> : classe avec metadata</p>
-                            </li>
-                            <li>
-                                <p><code class="fts-md">@Component</code> : directive avec template</p>
-                            </li>
-                            <li>
-                                <p><strong>structural</strong>: DOM <i class="fa fa-long-arrow-right" aria-hidden="true"></i>                                    add/remove/replace</p>
-                            </li>
-                            <pre style="width:100%"><code class="hljs" data-trim>
-<div *ngFor="let msg of messages | async">[...]</div>
-                            </code></pre>
-                            <li>
-                                <p><strong>attribute</strong>: element <i class="fa fa-long-arrow-right" aria-hidden="true"></i>                                    apparence/comportement</p>
-                            </li>
-                            <pre style="width:100%"><code class="hljs" data-trim>
-<input [ngClass]="setClasses()" [(ngModel)]="message.body" >
-                            </code></pre>
-                        </ul>
-                    </div>
-
-                </section>
-
-                <section class="slide">
-
-                    <h2 class="no-margin-bt">
-                        <logo></logo>service</h2>
-
-                    <div class="text-center">
-                        <img src="./images/archi_08_service.png" height="200" class="noborder">
-                    </div>
-                    <div class="list condensed">
-                        <ul>
-                            <li>
-                                <p>classe "simple", aucune spécificitée liée à Angular</p>
-                                <ul>
-                                    <li><span>http data, calcul, logger, ...</span></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <p>composants consomment les services fournis via DI</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <pre><code class="hljs" data-trim>
-import { Injectable } from '@angular/core';
-
-@Injectable()
-export class ChatMessagesService {
-
-  constructor(private af: AngularFire) { }
-
-  getMessagesByRoomId(roomId: string): Observable&lt;ChatMessage[]> { /*..*/ }
-}
-                    </code></pre>
-                </section>
-
-                <section class="slide">
-
-                    <h2>
-                        <logo></logo>dependency injection</h2>
-
-                    <div class="text-center">
-                        <!--<img src="./images/archi_09_DI.png" height="200" class="noborder">-->
-                        <img src="./images/archi_09_DI_inject.png" height="300" class="noborder">
-                    </div>
-
-                    <div class="list condensed ">
-                        <ul>
-                            <li>
-                                <p>fournir les services aux composants</p>
-                            </li>
-                            <li>
-                                <p>injecté via le constructeur du composant</p>
-                            </li>
-                            <pre style="width:100%"><code class="hljs" data-trim>
-export class MessagesComponent implements OnInit {
-  constructor(private chatMessageService: ChatMessagesService) { }
-}  
-                              </code></pre>
-
-                            <!--<li><p>injector</p>
-                                <ul>
-                                    <li><span>maintient un container de services</span></li>
-                                    <li><span>créé une instance de service via un provider</span></li>
-                                </ul>
-                            </li>-->
-                        </ul>
-                    </div>
-
-                </section>
-
-                <section class="slide">
-
-                    <h2>
-                        <logo></logo>pipes</h2>
-
-                    <div class="list condensed">
-                        <ul>
-                            <li>
-                                <p>manipulation de donnée</p>
-                                <ul>
-                                    <li><span><code style="font-size:0.8em">{{ price | currency:'EUR':true }}</code> : 51.30 <i class="fa fa-long-arrow-right" aria-hidden="true"></i> 52.30€</span></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <p>Pipes disponibles dans le framework :</p>
-                                <ul>
-                                    <img class="noborder" height="110" alt="api pipes" src="./images/archi_10_pipes.png">
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="fts-md"><code>UpperCasePipe.ts</code></p>
-                    <pre><code class="hljs" data-trim>
-@Pipe({name: 'uppercase'})
-export class UpperCasePipe implements PipeTransform {
-  transform(value: string): string {
-    if (isBlank(value)) return value;
-    if (typeof value !== 'string') {
-      throw new InvalidPipeArgumentError(UpperCasePipe, value);
-    }
-    return value.toUpperCase();
-  }
-}
-                    </code></pre>
-                </section>
-
-
-                <!--
-                <section class="slide">
-
-                    <h2><logo></logo>HTTP</h2>
-
-                    <div class="text-center">
-                        <img src="./images/archi_0.png" height="200" class="noborder">
-                    </div>
-                </section>
-            
--->
-
-                <section class="slide">
-
-                    <h2 class="no-margin-bt">
-                        <logo></logo>router</h2>
-
-                    <div class="text-center">
-                        <img class="noborder" style="height:280px" alt="router pattern" src="./images/router-pattern.png">
-                    </div>
-
-                    <div class="list condensed fts-md">
-                        <ul>
-                            <li>
-                                <p>chaque <strong>composant</strong> est routable</p>
-                            </li>
-                            <li>
-                                <p>les routes se font entre <strong>composants</strong></p>
-                            </li>
-                            <li>
-                                <p>chaque composant a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p>
-                            </li>
-                        </ul>
-                    </div>
                     <pre><code class="hljs" data-trim>
 // configuration routes                        
 const appRoutes: Routes = [
-{ path:'', component:LoginComponent },
-{ path:'rooms', component:RoomsComponent, canActivate:[AuthGuardService] },
+   { path:'',      component:LoginComponent },
+   { path:'rooms', component:RoomsComponent, canActivate:[AuthGuardService] },
 ];
+
 // navigate from template
 <a routerLink="/rooms">rooms</a>
+
+// navigate from component
+this.router.navigate(['/rooms']);
+                    </code></pre>
+                </section>
+
+
+                <section class="slide">
+
+                    <h2 class="no-margin-bt">
+                        <logo></logo>HTTP services
+                    </h2>
+
+                    <p class="fts-md" style="font-style: italic">
+                        "make the corresponding HTTP calls to a remote server's web API"
+                    </p>
+
+                    <div class="container-fluid" style="padding-top: 10px; padding-bottom: 30px">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="text-center">
+                                    <img class="noborder" style="height:280px" alt="router pattern" src="./images/router-pattern.png">
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="list condensed fts-md">
+                                    <ul>
+                                        <li>
+                                            <p>chaque <strong>composant</strong> est routable</p>
+                                        </li>
+                                        <li>
+                                            <p>les routes se font entre <strong>composants</strong></p>
+                                        </li>
+                                        <li>
+                                            <p>chaque composant a son propre <strong>router-outlet</strong> et ses <strong>child routes</strong></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <pre><code class="hljs" data-trim>
+// configuration routes                        
+const appRoutes: Routes = [
+   { path:'',      component:LoginComponent },
+   { path:'rooms', component:RoomsComponent, canActivate:[AuthGuardService] },
+];
+
+// navigate from template
+<a routerLink="/rooms">rooms</a>
+
 // navigate from component
 this.router.navigate(['/rooms']);
                     </code></pre>
@@ -1269,7 +1604,7 @@ this.router.navigate(['/rooms']);
 			Reveal.initialize({
 				history: true,
 				center: false,
-			    width: 1200, // 960 - 1024
+			    width: 1450, // 960 - 1024
 			    height: 846, // 700 - 746
 				slideNumber: true,
 
